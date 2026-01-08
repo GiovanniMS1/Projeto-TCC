@@ -5,11 +5,14 @@ public class MenuScript : MonoBehaviour
 {
     public Slider musicSlider;
     public Slider sfxSlider;
+    public GameObject sceneTransition;
+
     private void Start()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         AudioManager.Instance.InitializeSliders(musicSlider, sfxSlider);
+        Instantiate(sceneTransition);
     }
 
     public void Play(int levelIndex)
